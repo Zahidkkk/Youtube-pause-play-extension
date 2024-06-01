@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Tab Pause/Play",
+  "version": "1.0",
+  "description": "Pauses YouTube video when you switch tabs and plays it when you return.",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
